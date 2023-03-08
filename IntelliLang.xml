@@ -1,0 +1,90 @@
+<application>
+  <component name="LanguageInjectionConfiguration">
+    <injection language="SQL" injector-id="js">
+      <display-name>SQL create</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().withStringValueIgnoringInterpolations(stringMatchesBrics(" *(CREATE|DROP|ALTER) +((TEMPORARY )?TABLE|(UNIQUE )?INDEX) .*"))]]></place>
+    </injection>
+    <injection language="SQL" injector-id="js">
+      <display-name>SQL insert/replace</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().withStringValueIgnoringInterpolations(stringMatchesBrics(" *(INSERT|REPLACE) .*INTO .*"))]]></place>
+    </injection>
+    <injection language="SQL" injector-id="js">
+      <display-name>SQL select/delete</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().withStringValueIgnoringInterpolations(stringMatchesBrics(" *(SELECT|DELETE) .*FROM .*"))]]></place>
+    </injection>
+    <injection language="SQL" injector-id="js">
+      <display-name>SQL tagged string</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[taggedString("sql")]]></place>
+      <templateTag>sql</templateTag>
+    </injection>
+    <injection language="SQL" injector-id="js">
+      <display-name>SQL update</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().withStringValueIgnoringInterpolations(stringMatchesBrics(" *UPDATE .* SET .*"))]]></place>
+    </injection>
+    <injection language="SQL" injector-id="js">
+      <display-name>SQL with</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().withStringValueIgnoringInterpolations(stringMatchesBrics(" *WITH .+ AS *\\(.+"))]]></place>
+    </injection>
+    <injection language="TSQL" injector-id="js">
+      <display-name>Transact-SQL declare</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().withStringValueIgnoringInterpolations(stringMatchesBrics(" *DECLARE +\\@.*"))]]></place>
+    </injection>
+    <injection language="SQLite" injector-id="js">
+      <display-name>flash.data (SQLite)</display-name>
+      <single-file value="true" />
+      <place disabled="true"><![CDATA[jsLiteral().and(asAssignedValue("text", "*", "dbStatement"))]]></place>
+      <place disabled="true"><![CDATA[jsLiteral().and(asAssignedValue("text", "flash.data.SQLStatement"))]]></place>
+    </injection>
+    <injection language="JSON" injector-id="sql" pattern="(?i)json(b)?">
+      <display-name>(?i)json(b)?</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regclass" fragment="SQL_TABLE_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regclass</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regconfig" fragment="SQL_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regconfig</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regdictionary" fragment="SQL_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regdictionary</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regnamespace" fragment="SQL_SCHEMA_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regnamespace</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regoper" fragment="SQL_OPERATOR_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regoper</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regoperator" fragment="SQL_OPERATOR_SIGNATURE" hosts="PostgreSQL">
+      <display-name>(?i)regoperator</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regproc" fragment="SQL_FUNCTION_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regproc</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regprocedure" fragment="SQL_FUNCTION_SIGNATURE" hosts="PostgreSQL">
+      <display-name>(?i)regprocedure</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regrole" fragment="SQL_ROLE_REFERENCE" hosts="PostgreSQL">
+      <display-name>(?i)regrole</display-name>
+      <single-file value="true" />
+    </injection>
+    <injection language="PostgreSQL" injector-id="sql" pattern="(?i)regtype" fragment="SQL_TYPE_ELEMENT" hosts="PostgreSQL">
+      <display-name>(?i)regtype</display-name>
+      <single-file value="true" />
+    </injection>
+  </component>
+</application>

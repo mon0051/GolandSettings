@@ -1,0 +1,7 @@
+<application>
+  <component name="SonarLintGlobalSettings">
+    <option name="nodejsPath" value="$USER_HOME$/.nvm/versions/node/v16.13.2/bin/node" />
+    <option name="secretsNeverBeenAnalysed" value="false" />
+    <rules />
+  </component>
+</application>

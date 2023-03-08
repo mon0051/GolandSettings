@@ -1,0 +1,7 @@
+<application>
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="ec2-54-253-56-187.ap-southeast-2.compute.amazonaws.com" id="b46f0975-6de0-46e2-9004-c6479fdbf263" keyPath="~/.ssh/tmpam_dev.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</application>
